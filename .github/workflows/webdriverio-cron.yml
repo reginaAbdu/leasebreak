@@ -1,0 +1,19 @@
+name: WebDriverIO Cron Job
+
+on:
+  schedule:
+    - cron: '0 */12 * * *'
+
+jobs:
+  run-tests:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+
+      - name: Install dependencies
+        run: npm install
+
+      - name: Run WebDriverIO tests
+        run: npx wdio run wdio.conf.js
