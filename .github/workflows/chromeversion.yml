@@ -1,14 +1,20 @@
-name: Log Chrome Version
+name: Install Chromedriver
 
 on:
   workflow_dispatch:
 
 jobs:
-  log_chrome_version:
+  install_chromedriver:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Check Chrome Version
+      - name: Download Chromedriver
         run: |
-          chrome_version=$(google-chrome --version | cut -d ' ' -f 3)
-          echo "Chrome Version: $chrome_version"
+          wget -q https://chromedriver.storage.googleapis.com/121.0.6167.160/chromedriver_linux64.zip
+          unzip chromedriver_linux64.zip -d chromedriver
+          chmod +x chromedriver
+          sudo mv chromedriver /usr/local/bin/
+          rm chromedriver_linux64.zip
+
+      - name: Verify Chromedriver Installation
+        run: chromedriver --version
