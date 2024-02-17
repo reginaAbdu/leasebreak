@@ -1,0 +1,14 @@
+name: Log Chrome Version
+
+on:
+  workflow_dispatch:
+
+jobs:
+  log_chrome_version:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Check Chrome Version
+        run: |
+          chrome_version=$(google-chrome --version | cut -d ' ' -f 3)
+          echo "Chrome Version: $chrome_version"
