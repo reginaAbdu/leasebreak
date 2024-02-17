@@ -1,0 +1,20 @@
+name: Install chromedriver
+
+on:
+  workflow_dispatch:
+
+jobs:
+  install_chromedriver:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Download Chromedriver
+        run: |
+          wget -q https://storage.googleapis.com/chrome-for-testing-public/121.0.6167.184/linux64/chrome-headless-shell-linux64.zip
+          unzip chromedriver_linux64.zip -d chromedriver
+          chmod +x chromedriver
+          sudo mv chromedriver /usr/local/bin/
+          rm chromedriver_linux64.zip
+
+      - name: Verify Chromedriver Installation
+        run: chromedriver --version
