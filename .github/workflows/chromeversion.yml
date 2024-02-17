@@ -1,4 +1,4 @@
-name: Install Chromedriver
+name: Install chromedriver
 
 on:
   workflow_dispatch:
