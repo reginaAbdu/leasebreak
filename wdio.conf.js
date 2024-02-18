@@ -57,7 +57,7 @@ exports.config = {
     }],
     services: ['chromedriver'],
     chromeDriverArgs: ['--silent'],
-    chromedriverVersion: '121.0.6167.184',
+    chromedriverUrl: 'https://storage.googleapis.com/chrome-for-testing-public/121.0.6167.184/linux64/chrome-headless-shell-linux64.zip',
 
     //
     // ===================
