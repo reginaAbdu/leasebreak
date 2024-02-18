@@ -13,10 +13,14 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v2
 
-      - name: Install Chrome
+      - name: Download Chromedriver
         run: |
-          sudo apt-get update
-          sudo apt-get install -y google-chrome-stable
+          wget -q https://storage.googleapis.com/chrome-for-testing-public/121.0.6167.184/linux64/chrome-headless-shell-linux64.zip
+          unzip chrome-headless-shell-linux64.zip -d chromedriver
+          chmod +x chromedriver
+          sudo mv chromedriver /usr/local/bin/
+          rm chrome-headless-shell-linux64.zip
+
 
       - name: Install Node.js
         uses: actions/setup-node@v2
@@ -27,7 +31,7 @@ jobs:
         run: npm install
 
       - name: Set up Chrome environment
-        run: echo "CHROME_BIN=/usr/bin/google-chrome-stable" >> $GITHUB_ENV
+        run: echo "CHROME_BIN=/usr/bin/chromedriver" >> $GITHUB_ENV
 
       - name: Run WebDriverIO tests
         run: npx wdio run wdio.conf.js --headless
