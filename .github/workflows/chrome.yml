@@ -8,13 +8,18 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Download Chromedriver
-        run: |
-          wget -q https://storage.googleapis.com/chrome-for-testing-public/121.0.6167.184/linux64/chrome-headless-shell-linux64.zip
-          unzip chrome-headless-shell-linux64.zip -d chromedriver
-          chmod +x chromedriver
-          sudo mv chromedriver /usr/local/bin/
-          rm chrome-headless-shell-linux64.zip
+    - name: Check Chrome Version
+      run: |
+        CHROME_VERSION=$(google-chrome --version | grep -oP '(?<=Google Chrome )[0-9]+')
+        echo "Chrome Version: $CHROME_VERSION"
+    
+      # - name: Download Chromedriver
+      #   run: |
+      #     wget -q https://storage.googleapis.com/chrome-for-testing-public/121.0.6167.184/linux64/chrome-headless-shell-linux64.zip
+      #     unzip chrome-headless-shell-linux64.zip -d chromedriver
+      #     chmod +x chromedriver
+      #     sudo mv chromedriver /usr/local/bin/
+      #     rm chrome-headless-shell-linux64.zip
 
-      - name: Verify Chromedriver Installation
-        run: chromedriver --version
+      # - name: Verify Chromedriver Installation
+      #   run: chromedriver --version
