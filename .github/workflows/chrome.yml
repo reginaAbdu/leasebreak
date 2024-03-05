@@ -10,7 +10,7 @@ jobs:
     steps:
     - name: Check Chrome Version
       run: |
-        CHROME_VERSION=$(google-chrome --version | grep -oP '(?<=Google Chrome )[0-9]+')
+        CHROME_VERSION=$(google-chrome --version | awk '{print $3}')
         echo "Chrome Version: $CHROME_VERSION"
     
       # - name: Download Chromedriver
