@@ -27,8 +27,7 @@ jobs:
 
       - name: Install dependencies
         run: npm install
-
-        
+  
 
       - name: Run WebDriverIO tests
         run: npx wdio run wdio.conf.js --verbose
@@ -37,5 +36,4 @@ jobs:
       #   run: echo "CHROME_BIN=/usr/bin/chromedriver" >> $GITHUB_ENV
 
         
-      - name: Log debug
-        run: nano /home/runner/.npm/_logs/2024-03-05T10_26_01_325Z-debug-0.log
+    
