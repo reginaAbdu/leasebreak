@@ -28,7 +28,6 @@ jobs:
       - name: Install dependencies
         run: npm install
   
-
       - name: Run WebDriverIO tests
         run: npx wdio run wdio.conf.js --verbose
 
