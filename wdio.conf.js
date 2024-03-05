@@ -5,7 +5,7 @@ exports.config = {
   // ====================
   // WebdriverIO supports running e2e tests as well as unit and component tests.
   services: ["chromedriver"],
-  chromedriverCustomPath: "./chromedriver/chromedriver",
+  chromedriverCustomPath: "./chromedriver",
 
   runner: "local",
   //
