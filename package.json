@@ -16,6 +16,6 @@
     "@wdio/mocha-framework": "^8.31.1",
     "@wdio/spec-reporter": "^8.31.1",
     "wdio-chromedriver-service": "^8.0.0",
-    "chromedriver" : "121.0.6167.184"
+    "chromedriver" : "^122.0.0"
   }
 }
