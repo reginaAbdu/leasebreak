@@ -28,12 +28,13 @@ jobs:
       - name: Install dependencies
         run: npm install
 
-      # - name: Set up Chrome environment
-      #   run: echo "CHROME_BIN=/usr/bin/chromedriver" >> $GITHUB_ENV
-
+        
 
       - name: Run WebDriverIO tests
         run: npx wdio run wdio.conf.js --verbose
+
+      # - name: Set up Chrome environment
+      #   run: echo "CHROME_BIN=/usr/bin/chromedriver" >> $GITHUB_ENV
 
         
       - name: Log debug
