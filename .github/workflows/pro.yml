@@ -31,5 +31,10 @@ jobs:
       # - name: Set up Chrome environment
       #   run: echo "CHROME_BIN=/usr/bin/chromedriver" >> $GITHUB_ENV
 
+
       - name: Run WebDriverIO tests
         run: npx wdio run wdio.conf.js --verbose
+
+        
+      - name: Log debug
+        run: nano /home/runner/.npm/_logs/2024-03-05T10_26_01_325Z-debug-0.log
