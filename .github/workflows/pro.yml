@@ -1,4 +1,4 @@
-name: WebDriverIO Cron Job
+name: Final Cron Job
 
 on:
   workflow_dispatch:
