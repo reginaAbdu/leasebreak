@@ -1,0 +1,25 @@
+name: troubleshooting
+
+on:
+  workflow_dispatch:
+
+jobs:
+  install_chromedriver:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Check Port
+      run: |
+        sudo netstat -tuln | grep 951
+    
+      # - name: Download Chromedriver
+      #   run: |
+      #     cd '/home/runner/work/leasebreak/leasebreak/node_modules/chromedriver/lib/chromedriver/'
+      #     ls -a
+      # #     chmod +x chromedriver
+      # #     sudo mv chromedriver /usr/local/bin/
+      # #     rm chrome-headless-shell-linux64.zip
+
+      # - name: Verify Chromedriver Installation
+      #   run: |
+      #   chromedriver --version
